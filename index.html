@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="oceano">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matemáticas paso a paso · Grado 7°</title>
+  <meta name="description" content="Recurso Educativo Digital para practicar expresiones algebraicas y fracciones en grado séptimo.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="barra-superior">
+    <div class="barra-superior__interior">
+      <div class="marca">
+        <span class="marca__logo" aria-hidden="true">∑</span>
+        <div>
+          <strong>Matemáticas paso a paso</strong>
+          <small>Grado séptimo</small>
+        </div>
+      </div>
+      <label class="selector-tema">
+        <span class="sr">Tema visual</span>
+        <select id="selectorTema" aria-label="Tema visual">
+          <option value="oceano">🌊 Océano</option>
+          <option value="atardecer">🌇 Atardecer</option>
+          <option value="bosque">🌳 Bosque</option>
+          <option value="noche">🌙 Noche</option>
+        </select>
+      </label>
+    </div>
+    <nav class="menu" id="menu" aria-label="Secciones del recurso">
+      <button type="button" data-ir="inicio">🏠 Inicio</button>
+      <button type="button" data-ir="modulo1">🔤 Módulo 1</button>
+      <button type="button" data-ir="modulo2">🍕 Módulo 2</button>
+      <button type="button" data-ir="ejemplos">🪜 Paso a paso</button>
+      <button type="button" data-ir="juegos">🎮 Juegos</button>
+      <button type="button" data-ir="evaluacion">📝 Evaluación</button>
+    </nav>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <section class="vista" id="inicio">
+      <div class="portada">
+        <p class="portada__etiqueta">Recurso Educativo Digital</p>
+        <h1>Matemáticas paso a paso</h1>
+        <p class="portada__texto">
+          Aprende expresiones algebraicas y fracciones a tu ritmo: lee, mira ejemplos resueltos,
+          practica por niveles y recibe ayuda cuando te equivoques.
+        </p>
+        <div class="portada__botones">
+          <button type="button" class="btn btn--acento" data-ir="modulo1">Empezar con el Módulo 1</button>
+          <button type="button" class="btn btn--claro" data-ir="ejemplos">Ver ejemplos paso a paso</button>
+        </div>
+      </div>
+
+      <h2>¿Cómo usar este recurso?</h2>
+      <div class="rejilla rejilla--4">
+        <article class="tarjeta pasito"><span class="pasito__n">1</span><h3>Lee</h3><p>Repasa los conceptos clave de cada módulo.</p></article>
+        <article class="tarjeta pasito"><span class="pasito__n">2</span><h3>Observa</h3><p>Mira los ejemplos resueltos paso a paso.</p></article>
+        <article class="tarjeta pasito"><span class="pasito__n">3</span><h3>Practica</h3><p>Resuelve ejercicios que van de fáciles a difíciles.</p></article>
+        <article class="tarjeta pasito"><span class="pasito__n">4</span><h3>Comprueba</h3><p>Haz la evaluación y descubre qué debes reforzar.</p></article>
+      </div>
+
+      <h2>Contenidos</h2>
+      <div class="rejilla rejilla--2">
+        <article class="tarjeta tarjeta--enlace">
+          <h3>🔤 Módulo 1 · Expresiones algebraicas</h3>
+          <p>Variables, términos, términos semejantes, valor numérico y lenguaje algebraico.</p>
+          <button type="button" class="btn" data-ir="modulo1">Ir al módulo</button>
+        </article>
+        <article class="tarjeta tarjeta--enlace">
+          <h3>🍕 Módulo 2 · Fracciones</h3>
+          <p>Simplificar, sumar, restar, multiplicar y dividir fracciones, incluso con denominadores diferentes.</p>
+          <button type="button" class="btn" data-ir="modulo2">Ir al módulo</button>
+        </article>
+      </div>
+
+      <h2>Tu progreso</h2>
+      <div class="rejilla rejilla--3" id="progresoLista" aria-live="polite"></div>
+      <p class="nota">Tu progreso se guarda en este dispositivo. <button type="button" class="enlace" id="btnReiniciar">Borrar progreso</button></p>
+    </section>
+
+    <section class="vista" id="modulo1" hidden>
+      <header class="encabezado-seccion">
+        <p class="etiqueta">Módulo 1</p>
+        <h1>Expresiones algebraicas</h1>
+        <p>Aprende a reconocer variables y términos, y a operar con ellos.</p>
+      </header>
+
+      <h2>1. Conceptos clave</h2>
+      <div class="rejilla rejilla--2">
+        <article class="tarjeta">
+          <h3>Variable</h3>
+          <p>Es una letra que representa un número que todavía no conocemos o que puede cambiar.</p>
+          <p class="ejemplo">Ejemplo: si <b>n</b> es el número de cuadernos, la letra <b>n</b> es la variable.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Término algebraico</h3>
+          <p>Es un número multiplicado por una o varias letras.</p>
+          <div class="anatomia" aria-label="El término menos 5xy tiene coeficiente menos 5 y parte literal xy">
+            <div class="anatomia__parte"><span class="anatomia__valor coef">−5</span><span class="anatomia__rotulo">coeficiente</span></div>
+            <div class="anatomia__parte"><span class="anatomia__valor lit">xy</span><span class="anatomia__rotulo">parte literal</span></div>
+          </div>
+          <p class="ejemplo">Si solo aparece la letra, como en <b>x</b>, el coeficiente es 1. Y en <b>−y</b> es −1.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Expresión algebraica</h3>
+          <p>Es una combinación de términos unidos con sumas y restas.</p>
+          <p class="ejemplo"><b>3x − 2y + 5</b> tiene 3 términos: <b>3x</b>, <b>−2y</b> y <b>5</b> (este último no tiene letra).</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Términos semejantes</h3>
+          <p>Son los que tienen <b>la misma parte literal</b>. Solo cambia el coeficiente, así que se pueden sumar o restar sumando los coeficientes.</p>
+          <p class="ejemplo">4x + 3x = <b>7x</b> &nbsp;·&nbsp; 4x y 3y <b>no</b> son semejantes.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Valor numérico</h3>
+          <p>Se obtiene al reemplazar cada letra por un número y resolver las operaciones (primero las multiplicaciones, después las sumas y restas).</p>
+          <p class="ejemplo">Si x = 3, entonces 2x + 5 = 2·3 + 5 = <b>11</b>.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Del lenguaje común al algebraico</h3>
+          <table class="tabla">
+            <thead><tr><th>Se dice…</th><th>Se escribe…</th></tr></thead>
+            <tbody>
+              <tr><td>El doble de un número</td><td>2n</td></tr>
+              <tr><td>El triple de un número</td><td>3n</td></tr>
+              <tr><td>La mitad de un número</td><td>n/2</td></tr>
+              <tr><td>Un número aumentado en 5</td><td>n + 5</td></tr>
+              <tr><td>Un número disminuido en 5</td><td>n − 5</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+
+      <h2>2. Laboratorio</h2>
+      <div class="tarjeta laboratorio" id="labAlgebra">
+        <p>Elige una expresión, mueve los deslizadores y mira cómo cambia su valor.</p>
+        <label class="campo-etiqueta">Expresión
+          <select id="labExpr"></select>
+        </label>
+        <div class="deslizadores">
+          <label>x = <output id="labXv">2</output>
+            <input type="range" id="labX" min="-5" max="10" value="2">
+          </label>
+          <label id="labYcaja">y = <output id="labYv">1</output>
+            <input type="range" id="labY" min="-5" max="10" value="1">
+          </label>
+        </div>
+        <p class="resultado-lab" id="labSalida" aria-live="polite"></p>
+      </div>
+
+      <h2>3. Practica</h2>
+      <p class="nota">Elige un nivel. Si te equivocas, verás el procedimiento correcto para aprender del error.</p>
+      <div id="practicaAlgebra"></div>
+    </section>
+
+    <section class="vista" id="modulo2" hidden>
+      <header class="encabezado-seccion">
+        <p class="etiqueta">Módulo 2</p>
+        <h1>Fracciones</h1>
+        <p>Comprende las fracciones y practica sus cuatro operaciones.</p>
+      </header>
+
+      <h2>1. Conceptos clave</h2>
+      <div class="rejilla rejilla--2">
+        <article class="tarjeta">
+          <h3>Partes de una fracción</h3>
+          <div class="anatomia">
+            <div class="anatomia__parte"><span class="anatomia__valor"><span class="frac"><span class="frac__n coef">3</span><span class="frac__d lit">4</span></span></span></div>
+          </div>
+          <p>El <b>denominador</b> (4) dice en cuántas partes iguales se divide el todo. El <b>numerador</b> (3) dice cuántas partes se toman.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Fracciones equivalentes y simplificar</h3>
+          <p>Dos fracciones son equivalentes si representan la misma cantidad. Se obtienen multiplicando o dividiendo numerador y denominador por el mismo número.</p>
+          <p class="ejemplo" id="ejEquivalentes"></p>
+          <p>Para <b>simplificar</b> se divide arriba y abajo por el mayor número que divida a los dos (el MCD).</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Suma y resta</h3>
+          <p><b>Mismo denominador:</b> se suma o resta el numerador y se conserva el denominador.</p>
+          <p><b>Distinto denominador:</b> primero se buscan fracciones equivalentes con un denominador común (el mcm) y luego se opera.</p>
+          <p class="alerta">⚠️ No se suman los denominadores: 1/2 + 1/3 <b>no</b> es 2/5.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Multiplicación y división</h3>
+          <p><b>Multiplicar:</b> numerador × numerador y denominador × denominador.</p>
+          <p><b>Dividir:</b> se multiplica la primera fracción por el <b>inverso</b> de la segunda (se invierte la segunda).</p>
+          <p class="ejemplo" id="ejDivision"></p>
+        </article>
+      </div>
+
+      <h2>2. Laboratorio</h2>
+      <div class="tarjeta laboratorio" id="labFracciones">
+        <p>Construye una fracción con los deslizadores y observa su representación.</p>
+        <div class="deslizadores">
+          <label>Numerador = <output id="labNv">3</output>
+            <input type="range" id="labN" min="0" max="12" value="3">
+          </label>
+          <label>Denominador = <output id="labDv">4</output>
+            <input type="range" id="labD" min="1" max="12" value="4">
+          </label>
+        </div>
+        <div class="barras" id="labBarras" role="img" aria-label="Representación gráfica de la fracción"></div>
+        <ul class="datos-lab" id="labDatos" aria-live="polite"></ul>
+      </div>
+
+      <h2>3. Practica</h2>
+      <p class="nota">Escribe fracciones así: <b>3/4</b>. También puedes usar números mixtos (<b>1 1/2</b>) o enteros (<b>2</b>).</p>
+      <div id="practicaFracciones"></div>
+    </section>
+
+    <section class="vista" id="ejemplos" hidden>
+      <header class="encabezado-seccion">
+        <p class="etiqueta">Ejemplos paso a paso</p>
+        <h1>Mira cómo se resuelve</h1>
+        <p>Elige un ejemplo y avanza un paso a la vez, a tu ritmo.</p>
+      </header>
+      <div class="fichas" id="ejemploFichas" role="tablist" aria-label="Ejemplos disponibles"></div>
+      <div class="tarjeta" id="ejemploCuerpo" aria-live="polite"></div>
+    </section>
+
+    <section class="vista" id="juegos" hidden>
+      <header class="encabezado-seccion">
+        <p class="etiqueta">Actividades interactivas</p>
+        <h1>Aprende jugando</h1>
+        <p>Tres retos para practicar y mantener la atención.</p>
+      </header>
+      <div class="fichas" id="juegoFichas" role="tablist" aria-label="Juegos disponibles"></div>
+      <div class="tarjeta" id="juegoCuerpo"></div>
+    </section>
+
+    <section class="vista" id="evaluacion" hidden>
+      <header class="encabezado-seccion">
+        <p class="etiqueta">Evaluación</p>
+        <h1>Comprueba lo aprendido</h1>
+        <p>10 preguntas: 5 de expresiones algebraicas y 5 de fracciones. Al final verás qué debes reforzar.</p>
+      </header>
+      <div class="tarjeta" id="evalCuerpo"></div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>Matemáticas paso a paso · Recurso Educativo Digital </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
